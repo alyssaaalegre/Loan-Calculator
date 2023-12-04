@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class LoanCalculator {
+    public static void main(String args[]) {
+      Scanner input = new Scanner(System.in);
+      
+      
+      //User Input for Principal Amount
+      System.out.println("Enter Loan Amount (1000 - 100000 pesos): ");
+      double loanAmount = input.nextDouble();
+      
+      //User Input for Interest Rate per Month
+      System.out.println("Enter Interest Rate per Month(1 - 20%): ");
+      double interestRate = input.nextDouble();
+      double interestRate1 = interestRate / 100;
+      
+      //User Input for Loan Terms
+      System.out.println("Enter Loan Terms (6, 12, 18, 24, 30, or 36 months): ");
+      int loanTerms = input.nextInt();
+      
+      //calculations
+      double interestAmount = loanAmount * interestRate1;
+      double totalInterestAmount = interestAmount * loanTerms;
+      double totalLoanAmount = loanAmount + totalInterestAmount;
+      double paymentPerMonth = totalLoanAmount / loanTerms;
+      
+      
+      //display results
+      System.out.println("\n____________________________________________________________");
+      System.out.println("\nLoan Details: ");
+      System.out.println("Principal Amount (Loan Amount): " + loanAmount + " pesos");
+      System.out.println("Interest Rate per month: " + interestRate + "%");
+      System.out.println("Interest Amount per month: " + interestAmount + " pesos");
+      System.out.println("Loan Terms: " + loanTerms + " months");
+      System.out.println("Total Interest Amount: " + totalInterestAmount + " pesos");
+      System.out.println("Total Loan Amount: "  + totalLoanAmount + " pesos");
+      System.out.println("Payment per month: " + paymentPerMonth + " pesos");
+      
+     
+    }
+}
